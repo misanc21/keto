@@ -1,4 +1,5 @@
 import React from 'react';
+import Formulario from './components/Formulario'
 
 function App() {
   return (
@@ -9,7 +10,9 @@ function App() {
       <section className="contenido-principal contenido">
         <div className="row">
           <div className="one-half column">
-              datos
+              <Formulario
+              
+              />
           </div>
           <div className="one-half column">
               resultado
