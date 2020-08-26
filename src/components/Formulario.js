@@ -13,7 +13,7 @@ const Formulario = ({calcs}) => {
     const changeDatos = e => {
         setDatos({
             ...datos,
-            [e.target.name] :parseFloat(e.target.value)
+            [e.target.name]: e.target.value
         })
     }
 
@@ -21,21 +21,25 @@ const Formulario = ({calcs}) => {
 
     const iniciarCalculo = e =>{
         e.preventDefault()
+        let limSup = parseFloat(limiteSuperior)
+        let limInf = parseFloat(limiteInferior)
+        let obj = parseFloat(objetivo)
+        let errr = parseFloat(errorForm)
         
-        if(limiteSuperior <= limiteInferior){
+        if( limSup <= limInf){
             setError(1)
             return
-        } else if (objetivo > limiteSuperior || objetivo < limiteInferior){
+        } else if (obj > limSup || obj < limInf){
             setError(2)
             return
-        }else if (limiteSuperior === '' || limiteInferior === '' || objetivo === '' || errorForm === ''){
+        }else if (isNaN(limSup) || isNaN(limInf) || isNaN(obj) || isNaN(errr)){
             setError(3)
             return
         }else{
             setError(0)
         }
 
-        calcs(limiteSuperior, limiteInferior, objetivo, errorForm)
+        calcs(limSup, limInf, obj, errr)
 
 
     }
