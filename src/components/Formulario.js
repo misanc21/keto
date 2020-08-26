@@ -1,9 +1,47 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState } from 'react'
 
-const Formulario = () => {
+const Formulario = ({calcs}) => {
+    const [datos, setDatos] = useState({
+        limiteSuperior: 0,
+        limiteInferior: 0,
+        objetivo: 0,
+        errorForm: 0
+    })
+    const [error, setError] = useState(0)
+
+    const changeDatos = e => {
+        setDatos({
+            ...datos,
+            [e.target.name] :parseFloat(e.target.value)
+        })
+    }
+
+    let {limiteSuperior, limiteInferior, objetivo, errorForm} = datos
+
+    const iniciarCalculo = e =>{
+        e.preventDefault()
+        
+        if(limiteSuperior <= limiteInferior){
+            setError(1)
+            return
+        } else if (objetivo > limiteSuperior || objetivo < limiteInferior){
+            setError(2)
+            return
+        }else if (limiteSuperior === '' || limiteInferior === '' || objetivo === '' || errorForm === ''){
+            setError(3)
+            return
+        }else{
+            setError(0)
+        }
+
+        calcs(limiteSuperior, limiteInferior, objetivo, errorForm)
+
+
+    }
+
     return (
         <Fragment>
-            <form>
+            <form onSubmit={iniciarCalculo}>
                 <h2>Registra los datos</h2>
                 <div className="campo">
                     <label>Limite superior</label>
@@ -11,6 +49,9 @@ const Formulario = () => {
                         type="number"
                         className="u-full-width"
                         placeholder="Registra el limite superior"
+                        name="limiteSuperior"
+                        onChange={changeDatos}
+                        value={limiteSuperior}
                     />
                 </div>
                 <div className="campo">
@@ -19,6 +60,9 @@ const Formulario = () => {
                         type="number"
                         className="u-full-width"
                         placeholder="Registra el limite inferior"
+                        name="limiteInferior"
+                        onChange={changeDatos}
+                        value={limiteInferior}
                     />
                 </div>
                 <div className="campo">
@@ -27,6 +71,9 @@ const Formulario = () => {
                         type="number"
                         className="u-full-width"
                         placeholder="Objetivo (entre lim inferior y lim superior)"
+                        name="objetivo"
+                        onChange={changeDatos}
+                        value={objetivo}
                     />
                 </div>
                 <div className="campo">
@@ -35,6 +82,9 @@ const Formulario = () => {
                         type="number"
                         className="u-full-width"
                         placeholder="Error permitido en el resultado"
+                        name="errorForm"
+                        onChange={changeDatos}
+                        value={errorForm}
                     />
                 </div>
                 <input

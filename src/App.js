@@ -1,7 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Formulario from './components/Formulario'
+import Listado from './components/Listado'
 
 function App() {
+
+  const [lista, setLista] = useState([])
+
+  const calcs = (sup, inf,obj, err ) =>{
+    alert (sup)
+  }
   return (
     <div className="container">
       <header>
@@ -11,11 +18,13 @@ function App() {
         <div className="row">
           <div className="one-half column">
               <Formulario
-              
+                calcs= {calcs}
               />
           </div>
           <div className="one-half column">
-              resultado
+              <Listado
+                lista = {lista}
+              />
           </div>
         </div>
       </section>
