@@ -99,7 +99,7 @@ const Formulario = ({calcs}) => {
                 </div>
                 <input
                     type="submit"
-                    className="u-full-width button-primary"
+                    className="u-full-width button-keto"
                     value="iniciar"
                 />
 

@@ -12,7 +12,8 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>Aproximacion del punto medio</h1>
+        <img className="img-keto" src="https://www.ketogains.com/wp-content/uploads/2020/02/ketogains.svg" alt="keto"/> 
+        <h1>Aproximacion del punto medio </h1>
       </header>
       <section className="contenido-principal contenido">
         <div className="row">

@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(to right, #c06a23, #553205); 
+  background: linear-gradient(to right, #df4444, #ec780c); 
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -7,20 +7,25 @@ body {
 
 header {
   margin: 30px 0;
+  background: rgb(58, 57, 57);
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
 }
 
 h1 {
   font-family: 'Raleway', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   color: white;
-  text-align: center;
-  font-size: 4.8rem!important;
+  font-size: 3.5rem!important;
+  margin: 0;
 }
 
 h2{
   font-family: 'Raleway', sans-serif;
-  font-weight: 100;
-  color: #e28940;
+  font-weight: 600;
+  color: #e67e1d;
   font-size:3rem!important;
   text-align: center;
 }
@@ -33,6 +38,11 @@ h2{
   color: #721c24;
   background-color: #f8d7da;
   border-color: #f5c6cb;
+}
+
+.button-keto {
+  background: linear-gradient(to right, #df4444, #ec780c);
+  color: white!important;
 }
 
 .campo {
@@ -52,4 +62,8 @@ h2{
 .error {
   text-align: center;
   padding: 1rem;
+}
+
+.img-keto {
+  width: 200px;
 }
