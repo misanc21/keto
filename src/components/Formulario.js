@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from 'react'
+import Error from './Error'
 
 const Formulario = ({calcs}) => {
     const [datos, setDatos] = useState({
@@ -43,6 +44,11 @@ const Formulario = ({calcs}) => {
         <Fragment>
             <form onSubmit={iniciarCalculo}>
                 <h2>Registra los datos</h2>
+                {
+                    error === 1? <Error mensaje='"Limite superior" menor o igual que "limite inferior"'/> :
+                    error === 2? <Error mensaje="Objetivo no esta entre limites"/> :
+                    error === 3? <Error mensaje="Todos los campos son obligatorios"/> : null
+                }
                 <div className="campo">
                     <label>Limite superior</label>
                     <input

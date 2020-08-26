@@ -29,6 +29,12 @@ h2{
   color: rgb(190, 186, 186);
 }
 
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
 .campo {
   margin-bottom: 2rem;
 }
@@ -41,4 +47,9 @@ h2{
   background-color: white;
   padding: 30px;
   border-radius: 20px;
+}
+
+.error {
+  text-align: center;
+  padding: 1rem;
 }
