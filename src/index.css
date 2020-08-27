@@ -104,6 +104,9 @@ input:focus {
     display: block;
     text-align: center;
   }
+  .contenido {
+    margin-bottom: 5rem!important;
+  }
 }
 
 @media (max-width: 608px) {
