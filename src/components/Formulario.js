@@ -117,6 +117,7 @@ const Formulario = ({calcs, reiniciarTabla}) => {
             <div className="row">
                 <div className="twelve columns">
                     <label className="reiniciar-form" onClick={reiniciarForm}>Reiniciar formulario</label>
+                    <hr className="separador"/>
                 </div>
             </div>
         </Fragment>
