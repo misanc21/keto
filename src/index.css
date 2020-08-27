@@ -20,6 +20,7 @@ h1 {
   color: rgb(172, 165, 165);
   font-size: 3.5rem!important;
   margin: 0;
+  font-style: oblique;
 }
 
 h2{
@@ -92,4 +93,17 @@ input:focus {
 .reiniciar-form:hover {
   color: rgb(243, 127, 92);
   cursor: pointer;
+}
+
+@media (max-width: 860px) {
+  header {
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 608px) {
+  h1 {
+    font-size: 2.5rem!important;
+  }
 }
