@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, Fragment} from 'react';
 import Formulario from './components/Formulario'
 import Listado from './components/Listado'
 import { calcs } from './helpers'
@@ -9,6 +9,10 @@ function App() {
 
   const arr = (sup, inf, obj, err)=>{
     setLista(calcs(sup, inf, obj, err))
+  }
+
+  const reiniciarTabla = () =>{
+    setLista([])
   }
 
   return (
@@ -22,12 +26,20 @@ function App() {
           <div className="one-half column">
               <Formulario
                 calcs= {arr}
+                reiniciarTabla = {reiniciarTabla}
               />
           </div>
           <div className="one-half column">
-              <Listado
-                lista = {lista}
-              />
+              {lista.length === 0? (
+                <Fragment>
+                  <h2>Listado</h2>
+                  <p className="p-tableVacia">llena el formulario para obtener los datos</p>
+                </Fragment>
+              ):(
+                <Listado
+                  lista = {lista}
+                />
+              )}
           </div>
         </div>
       </section>

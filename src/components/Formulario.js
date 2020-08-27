@@ -1,7 +1,7 @@
 import React, { Fragment, useState } from 'react'
 import Error from './Error'
 
-const Formulario = ({calcs}) => {
+const Formulario = ({calcs, reiniciarTabla}) => {
     const [datos, setDatos] = useState({
         limiteSuperior: 0,
         limiteInferior: 0,
@@ -18,6 +18,16 @@ const Formulario = ({calcs}) => {
     }
 
     let {limiteSuperior, limiteInferior, objetivo, errorForm} = datos
+
+    const reiniciarForm = () =>{
+        setDatos({
+            limiteSuperior: 0,
+            limiteInferior: 0,
+            objetivo: 0,
+            errorForm: 0
+        })
+        reiniciarTabla()
+    }
 
     const iniciarCalculo = e =>{
         e.preventDefault()
@@ -102,8 +112,12 @@ const Formulario = ({calcs}) => {
                     className="u-full-width button-keto"
                     value="iniciar"
                 />
-
             </form>
+            <div className="row">
+                <div className="twelve columns">
+                    <label className="reiniciar-form" onClick={reiniciarForm}>Reiniciar formulario</label>
+                </div>
+            </div>
         </Fragment>
     )
 }

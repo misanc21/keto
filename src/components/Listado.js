@@ -51,7 +51,7 @@ const columns = [
     return (
         <Fragment >
             <h2>Listado</h2>
-            <label>Iteraciones hechas para encontrar el punto medio</label>
+            <label className="center">Iteraciones hechas para encontrar el punto medio</label>
             <Paper className={classes.root}>
                 <TableContainer className={classes.container}>
                 <Table stickyHeader aria-label="sticky table">
