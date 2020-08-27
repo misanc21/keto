@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import Error from './Error'
+import PropTypes from 'prop-types'
 
 const Formulario = ({calcs, reiniciarTabla}) => {
     const [datos, setDatos] = useState({
@@ -120,6 +121,11 @@ const Formulario = ({calcs, reiniciarTabla}) => {
             </div>
         </Fragment>
     )
+}
+
+Formulario.propTypes = {
+    calcs: PropTypes.func.isRequired,
+    reiniciarTabla: PropTypes.func.isRequired
 }
 
 export default Formulario
