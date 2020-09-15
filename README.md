@@ -1,7 +1,26 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-### Acerca de 
-Este proyecto fue realizado para la prueba de ketogains.
+# Buscador de letras
+_proyecto para prueba de ketogains_ 
 
-### Deployment
+## Comenzando 🚀
+_Poyecto realizado con hooks, especialmente con useState para la manipulacion de los states_ 
 
-puedes encontrar un live del proyecto en: https://mystifying-boyd-f44b48.netlify.app/
+* [demo] https://mystifying-boyd-f44b48.netlify.app/
+
+![myimage-alt-tag](/imgdemo.png)
+
+## Construido con 🛠️
+_El siguiente proyecto fue construido con las siguientes herramientas_
+* [react hooks] (https://es.reactjs.org/docs/hooks-intro.html) Uso de useContext
+
+_dependencias:_
+* axios
+
+APIS consultadas:_
+[api de letras] (https://lyricsovh.docs.apiary.io/#)
+[biografias] (https://www.theaudiodb.com/api_guide.php)
+
+## Autores ✒️
+
+_proyecto original en el curso **React - La Guía Completa... autor: Juan Pablo de la Torre**_
+
+* **Misael Nivio**  - [misanc21](https://github.com/misanc21)
